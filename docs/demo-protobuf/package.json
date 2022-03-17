@@ -1,0 +1,21 @@
+{
+  "name": "demo-protobuf",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "1. download prices": "node index.js",
+    "2. generate protobuf runtime": "protoc --js_out=import_style=commonjs,binary:. prices.proto",
+    "3. run protobuf transformation": "node protoc.js",
+    "4. start grpc server": "node grpc-server.js",
+    "5. start grpc client": "node grpc-client.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.5.3",
+    "@grpc/proto-loader": "^0.6.9",
+    "google-protobuf": "^3.19.3"
+  }
+}

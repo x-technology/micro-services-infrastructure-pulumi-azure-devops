@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package currencyProvider;
+
+service CurrencyProvider {
+  rpc GetRates(currencyProvider.GetRatesRequest) returns (currencyProvider.GetRatesResponse) {}
+}
+
+message GetRatesRequest {}
+
+message GetRatesResponse {
+  /**
+    The cost of 1 unit of baseCurrency in rate currency. E.g:
+    baseCurrency = EUR
+    currency = USD
+    rate = 1.1138 - the cost of 1 EUR in USD
+   */
+  string baseCurrency = 1;
+
+  message ExchangeRate {
+    string currency = 1;
+    double rate = 2;
+  }
+
+  repeated ExchangeRate rates = 3;
+}
