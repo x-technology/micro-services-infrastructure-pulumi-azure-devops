@@ -24,17 +24,19 @@ yarn lerna run build
 
 ## FAQ
 
-### How to make a test client?
+### TMP How to make a test client?
 
 ```js
 var all = require('@common/go-grpc')
 var testServerHost = 'localhost:50051'
+// var testServerHost = 'ecb-provider:50051'
 var c3 = new all.ecbProvider.EcbProviderClient( testServerHost, all.createInsecure());
 var r3 = await c3.GetRates(new all.currencyProvider.GetRatesRequest())
 r3.toObject()
 ```
 
 ```js
+// inside converter container
 var all = require('@common/go-grpc')
 var testServerHost = '0.0.0.0:50052'
 var c2 = new all.currencyConverter.CurrencyConverterClient( testServerHost, all.createInsecure());

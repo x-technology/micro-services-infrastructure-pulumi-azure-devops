@@ -2,13 +2,13 @@ version: '3.2'
 
 services:
   ecb-provider:
-    image: tmp-base1:latest
+    image: tmp-base2:latest
     working_dir: /usr/src/main/packages/services/grpc/ecb-provider
     entrypoint: ["npm","start"]
     ports:
       - '50051:50051'
   currency-converter:
-    image: tmp-base1:latest
+    image: tmp-base2:latest
     working_dir: /usr/src/main/packages/services/grpc/currency-converter
     entrypoint: ["npm","start"]
     environment:
