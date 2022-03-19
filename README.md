@@ -24,6 +24,24 @@ yarn lerna run build
 
 ## FAQ
 
+### How to make a test client?
+
+```js
+var all = require('@common/go-grpc')
+var testServerHost = 'localhost:50051'
+var c3 = new all.ecbProvider.EcbProviderClient( testServerHost, all.createInsecure());
+var r3 = await c3.GetRates(new all.currencyProvider.GetRatesRequest())
+r3.toObject()
+```
+
+```js
+var all = require('@common/go-grpc')
+var testServerHost = '0.0.0.0:50052'
+var c2 = new all.currencyConverter.CurrencyConverterClient( testServerHost, all.createInsecure());
+var r2 = await c2.Convert(new all.currencyConverter.ConvertRequest({ sellAmount: 100, sellCurrency: 'USD', buyCurrency: 'GBP' }));
+r2.toObject()
+```
+
 ### How to create a new library?
 
 1. For example, we want to create a new `logger` library.
