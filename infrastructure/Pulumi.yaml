@@ -1,0 +1,8 @@
+name: infrastructure
+runtime: nodejs
+description: A minimal Azure Native TypeScript Pulumi program
+config:
+  azure-native:location: uksouth
+  cloudflare:apiToken:
+    secure: AAABAE0UwaSj30rXHUOZI4E4DvELmWIvk/4lG3OqytcvRNgJlfuL2TTMHfzHEvsIwIJXXvLAUlwvO6/tS/Bh7MxjSNFUh9Ms
+  cloudflare:zoneId: 52e0efcb65e51c11102510a06c0fa833
