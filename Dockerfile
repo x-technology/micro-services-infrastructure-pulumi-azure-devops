@@ -6,10 +6,12 @@ RUN apk update && \
 
 # TODO make a path variable
 WORKDIR /usr/src/main
-COPY . /usr/src/main
+COPY package.json yarn.lock /usr/src/main/
 
 # Install runtime dependencies
 RUN yarn install
+
+COPY . /usr/src/main
 RUN yarn lerna bootstrap
 RUN yarn lerna run build
 
